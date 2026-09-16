@@ -90,7 +90,9 @@ in
 
         Weave also uses the *same* number on UDP for one of its data ports,
         which is why {option}`…weave.dataPorts` overlaps it. That is upstream's
-        design, not a mistake here.
+        design, not a mistake here — and it is not licence to open both numbers
+        on both protocols, which ./weave.test.nix asserts by checking that the
+        other data port stays shut on TCP.
       '';
     };
 

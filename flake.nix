@@ -76,6 +76,7 @@
         in
         walk ./.;
 
+      # testModules :: {name, path} -> testmodules
       testModules =
         let
           byStem = lib.groupBy (test: test.name) testFiles;

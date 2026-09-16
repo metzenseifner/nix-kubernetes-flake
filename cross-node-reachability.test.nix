@@ -44,7 +44,9 @@
     # Pinned to flannel rather than left at the default, because the
     # overlay subtest below asserts on 8472-vs-4789 and those are a
     # property of *this* datapath: Calico's VXLAN mode uses 4789, so the
-    # same assertion would invert under it.
+    # same assertion would invert under it. ./pod-network/calico.test.nix
+    # and ./pod-network/weave.test.nix are where that inverted claim, and
+    # each datapath's own ports, get made.
     services.k8sCluster.podNetwork.datapath = "flannel";
 
     virtualisation.vlans = [ 1 ];

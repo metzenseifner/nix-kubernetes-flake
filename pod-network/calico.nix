@@ -18,6 +18,9 @@
 #          raw iptables rule, which this module adds via `extraCommands`. That
 #          escape hatch is iptables-only, so a host that has switched on
 #          `networking.nftables.enable` must open protocol 4 itself.
+#          ./calico.test.nix builds an actual IPIP tunnel between two nodes
+#          and pings through it, because a rule added this way is invisible to
+#          anything that only reads options.
 #
 # Upstream's manifest ships `bird` + IPIP. The substitutions below move it to
 # VXLAN when asked, which is the same edit Calico's own docs describe, and
